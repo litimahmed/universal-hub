@@ -58,6 +58,7 @@ export function AppSidebar() {
         <Sidebar
             className={`${open ? "w-64" : "w-16"} transition-all duration-300 border-r-0 shadow-[var(--shadow-sidebar)]`}
             collapsible="icon"
+            data-tour="sidebar"
         >
             <div className="flex flex-col h-full bg-[hsl(var(--sidebar-background))]">
                 <SidebarContent className="flex-1 sidebar-scrollbar-auto overflow-y-auto overflow-x-hidden">
