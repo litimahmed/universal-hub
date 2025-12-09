@@ -424,7 +424,7 @@ function SettingsContent() {
                 {/* Appearance Settings */}
                 <TabsContent value="appearance" className="space-y-6">
                     <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                        <Card className="border-border/50 bg-card">
+                        <Card data-tour="settings-theme" className="border-border/50 bg-card">
                             <CardHeader className="border-b border-border/50 bg-muted/30">
                                 <div className="flex items-center gap-3">
                                     <div className="p-2 rounded-lg bg-primary/10 dark:bg-primary/20">

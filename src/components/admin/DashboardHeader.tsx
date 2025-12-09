@@ -99,7 +99,7 @@ export function DashboardHeader() {
                 </div>
             </div>
 
-            <div className={`flex items-center gap-1 ${isRTL ? "flex-row-reverse" : ""}`}>
+            <div data-tour="header-actions" className={`flex items-center gap-1 ${isRTL ? "flex-row-reverse" : ""}`}>
                 {/* Theme Switcher */}
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
@@ -174,6 +174,7 @@ export function DashboardHeader() {
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                         <Button
+                            data-tour="language-selector"
                             variant="ghost"
                             size="icon"
                             className="h-9 w-9 text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-lg transition-all duration-200"
@@ -318,6 +319,7 @@ export function DashboardHeader() {
                         </DropdownMenuItem>
                         <DropdownMenuSeparator className="my-1" />
                         <DropdownMenuItem
+                            data-tour="logout-btn"
                             onClick={handleLogout}
                             disabled={isLoggingOut}
                             className={`py-2 px-3 cursor-pointer rounded-md text-destructive focus:text-destructive focus:bg-destructive/10 ${isRTL ? "flex-row-reverse" : ""}`}
