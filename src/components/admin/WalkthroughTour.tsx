@@ -332,6 +332,11 @@ export function WalkthroughTour() {
     }
   }, [setStepIndex, stopTour, navigate]);
 
+  // Don't render if not running
+  if (!isRunning) {
+    return null;
+  }
+
   return (
     <Joyride
       steps={steps}
@@ -341,25 +346,37 @@ export function WalkthroughTour() {
       scrollToFirstStep
       showSkipButton={false}
       showProgress={false}
-      disableOverlayClose
+      disableOverlayClose={false}
       spotlightClicks={false}
       callback={handleJoyrideCallback}
       tooltipComponent={CustomTooltip}
       floaterProps={{
         disableAnimation: false,
+        hideArrow: false,
       }}
       styles={{
         options: {
           arrowColor: "hsl(var(--popover))",
-          overlayColor: "rgba(0, 0, 0, 0.6)",
+          overlayColor: "rgba(0, 0, 0, 0.5)",
           zIndex: 10000,
         },
         spotlight: {
           borderRadius: "12px",
-          boxShadow: "0 0 0 9999px rgba(0, 0, 0, 0.6), 0 0 40px rgba(0, 0, 0, 0.4)",
         },
         overlay: {
-          backgroundColor: "transparent",
+          backgroundColor: "rgba(0, 0, 0, 0.5)",
+        },
+        buttonNext: {
+          display: "none",
+        },
+        buttonBack: {
+          display: "none",
+        },
+        buttonClose: {
+          display: "none",
+        },
+        buttonSkip: {
+          display: "none",
         },
       }}
     />
